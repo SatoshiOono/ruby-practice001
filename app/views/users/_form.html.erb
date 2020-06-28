@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+ <div>
+  <%= f.text_field :name %>
+  </div>
+  <div>
+  <%= f.select :gender, User.genders.keys %>
+  </div>
+  <div>
+  <%= require "date"
+      d = Date.today 
+      last_year = d.year
+      f.date_select :birthday, start_year: 1950, end_year: last_year %>
+  </div>
+  <div>
+  <%= f.text_field :hometown %>
+  </div>
+  <div>
+  <%= f.text_area :remarks %>
+  </div>
+  <div>
+    <%= f.submit "送信する" %>
+  </div>
+<% end %>

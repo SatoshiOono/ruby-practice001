@@ -1,0 +1,18 @@
+<div class="profile">
+    <h1>Top/profile</h1>
+    <p>Find me in app/views/top/profile.html.erb</p>
+    <%= image_tag 'noimage.png' %>
+    <div>名前:  <%= @user_name %></div>
+    <div>sex:  <%= @gender %></div>
+    <div>誕生日:  <%= @birthday %></div>
+     <% if @gender == "man" %>
+    <div>年齢:  <%= @age %></div>
+     <% end %>
+    <div>出身:  <%= @hometown %></div>
+    <% @skills.each do |skill| %>
+    <div>特技:  <%= skill %></div>
+    <% end %>
+    <% if @remarks.present? %>
+    <div>ひとこと:  <%= @remarks %></div>
+    <% end %>
+</div>
